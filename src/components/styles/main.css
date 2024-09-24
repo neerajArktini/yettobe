@@ -1,0 +1,56 @@
+/* components/Marquee.css */
+
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+    z-index: 99;
+    gap: 50px;
+    flex:1.5;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-20%);
+    }
+  }
+  @keyframes marquee-r {
+    0% {
+        transform: translateX(-20%); /* Start off-screen to the left */
+      }
+      100% {
+        transform: translateX(100%); /* End off-screen to the right */
+      }
+  }
+
+  .marquee-left{
+    animation: marquee 50s linear infinite;
+  }
+  .marquee-right{
+    animation: marquee-r 50s linear infinite;
+  }
+
+  .parent{
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+  .desc{
+    transition: all .3s ease-in-out;
+  }
+  .title{
+    transition: all .3s ease-in-out;
+  }
+
+  .desc{
+    transform: scale(0);
+  }
+  .parent:hover .desc{
+    transform: scale(1);
+  }
+  .parent:hover .title{
+    transform: scale(0.7);
+  }
+  
